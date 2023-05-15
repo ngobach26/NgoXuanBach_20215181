@@ -108,8 +108,4 @@ public class DigitalVideoDisc {
 	public void setCost(float cost) {
 		this.cost = cost;
 	}
-
-	public class nbDigitalVideoDiscs {
-
-	}
 }
