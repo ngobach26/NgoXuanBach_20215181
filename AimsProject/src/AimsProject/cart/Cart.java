@@ -10,7 +10,7 @@ public class Cart {
 	public void displayCart() {
 		StringBuffer sb = new StringBuffer("\n***********************CART***********************\nOrdered Items:");
 		for (int i = 0; i < this.qtyOrdered; i++) {
-			sb.append("\n" + (i+1) + ". DVD - " + itemsOrdered[i].getTitle() + " - "
+			sb.append("\n" + (i + 1) + ". DVD - " + itemsOrdered[i].getTitle() + " - "
 					+ itemsOrdered[i].getCategory() + " - "
 					+ itemsOrdered[i].getDirector() + " - "
 					+ (itemsOrdered[i].getLength() == 0 ? "Unknown" : itemsOrdered[i].getLength()) + " : "
@@ -19,7 +19,35 @@ public class Cart {
 		sb.append("\nTotal cost: " + this.totalCost());
 		sb.append("\n***************************************************");
 		System.out.println(sb);
-		
+
+	}
+
+	public void searchById(int id) {
+		Integer j = Integer.valueOf(id);
+		for (int i = 0; i < this.qtyOrdered; i++) {
+			if (j.equals(itemsOrdered[i].getId())) {
+				System.out.println("\nID:" + itemsOrdered[i].getId() + " - DVD - " + itemsOrdered[i].getTitle() + " - "
+						+ itemsOrdered[i].getCategory() + " - "
+						+ itemsOrdered[i].getDirector() + " - "
+						+ (itemsOrdered[i].getLength() == 0 ? "Unknown" : itemsOrdered[i].getLength()) + " : "
+						+ (itemsOrdered[i].getCost() == 0 ? "Unknown" : itemsOrdered[i].getCost()) + "$");
+				return;
+			}
+		}
+		System.out.println("Item not found");
+	}
+
+	public void searchByTitle(String title) {
+		for (int i = 0; i < this.qtyOrdered; i++) {
+			if (title.equals(itemsOrdered[i].getTitle())) {
+				System.out.println("\nID:" + itemsOrdered[i].getId() + " - DVD - " + itemsOrdered[i].getTitle() + " - "
+						+ itemsOrdered[i].getCategory() + " - "
+						+ itemsOrdered[i].getDirector() + " - "
+						+ (itemsOrdered[i].getLength() == 0 ? "Unknown" : itemsOrdered[i].getLength()) + " : "
+						+ (itemsOrdered[i].getCost() == 0 ? "Unknown" : itemsOrdered[i].getCost()) + "$");
+				return;
+			}
+		}System.out.println("Item not found");
 	}
 
 	public void addDigitalVideoDisc(DigitalVideoDisc disc) {
