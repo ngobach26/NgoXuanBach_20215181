@@ -24,5 +24,9 @@ public class CartTest {
         System.out.println("AFTER REMOVE");
         anOrder.displayCart();
 
+        anOrder.searchById(1);
+
+        anOrder.searchByTitle("Aladin");
+
     }
 }
