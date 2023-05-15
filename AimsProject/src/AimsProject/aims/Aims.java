@@ -77,14 +77,6 @@ public class Aims {
         System.out.println(dvd1.nbDigitalVideoDiscs);
 
         System.out.println();
-
-        int id =3;
-        // Integer i = 3;
-        Integer j = Integer.valueOf(id);
-        // System.out.println(j.equals(i));
-        for(Integer i = 0;i < 4;i++){
-            System.out.println(j.equals(i));
-        }
         
     }
 }
