@@ -1,12 +1,6 @@
-package AimsProject.disc;
+package media;
 
-public class DigitalVideoDisc {
-	private int id;
-	private String title;
-	private String category;
-	private String director;
-	private int length;
-	private float cost;
+public class DigitalVideoDisc extends Disc implements Playable{
 	public static int nbDigitalVideoDiscs = 0;
 
 	@Override

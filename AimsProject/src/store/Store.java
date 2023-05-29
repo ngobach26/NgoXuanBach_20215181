@@ -1,6 +1,6 @@
-package AimsProject.store;
+package store;
 
-import AimsProject.disc.DigitalVideoDisc;
+import media.DigitalVideoDisc;
 
 public class Store {
     private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[1000];
@@ -36,3 +36,4 @@ public class Store {
 		}        
     }
 }
+
