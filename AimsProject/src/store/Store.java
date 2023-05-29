@@ -1,39 +1,26 @@
 package store;
 
-import media.DigitalVideoDisc;
+import java.util.ArrayList;
+import media.Media;
 
 public class Store {
-    private DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[1000];
-    private int numOfItems = 0;
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
-    public void addDVD(DigitalVideoDisc dvd) {
-        this.itemsInStore[numOfItems] = dvd;
-        System.out.println("The DVD " + dvd.getTitle() + " have been added!");
-        numOfItems++;
+    public void addMedia(Media media) {
+        if (itemsInStore.size() == 20) {
+            System.out.println("The Store is full!!");
+        } else {
+            itemsInStore.add(media);
+            System.out.println("The " + media.getClass().getName()+" " + media.getTitle() + " have been added!");
+        }
     }
 
-    public void removeDVD(DigitalVideoDisc dvd){
-        if (numOfItems == 0) {
-			System.out.println("The store is emplty!");
-		} else {
-			int check = -1;
-			for (int i = 0; i < numOfItems; i++) {
-				if (itemsInStore[i].equals(dvd)) {
-					check = i;
-					break;
-				}
-			}
-			if (check == -1) {
-				System.out.println("Item not found!");
-			} else {
-				for (int i = check; i < numOfItems - 1; i++) {
-					itemsInStore[i] = itemsInStore[i + 1];
-
-				}
-				System.out.println("The DVD " + dvd.getTitle() + " have been deleted!");
-				numOfItems--;
-			}
-		}        
+    public void removeMedia(Media media) {
+        if (itemsInStore.contains(media)) {
+            itemsInStore.remove(media);
+            System.out.println("The " + media.getClass().getName() + " " + media.getTitle() + " have been removed!");
+        } else {
+            System.out.println("The " + media.getClass().getName() + " " + media.getTitle() + " is not in the store!");
+        }
     }
 }
-

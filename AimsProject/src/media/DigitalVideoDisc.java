@@ -1,6 +1,6 @@
 package media;
 
-public class DigitalVideoDisc extends Disc implements Playable{
+public class DigitalVideoDisc extends Disc implements Playable {
 	public static int nbDigitalVideoDiscs = 0;
 
 	@Override
@@ -102,4 +102,10 @@ public class DigitalVideoDisc extends Disc implements Playable{
 	public void setCost(float cost) {
 		this.cost = cost;
 	}
+
+	public void play() {
+		System.out.println("Playing DVD: " + this.getTitle());
+		System.out.println("DVD length: " + this.getLength());
+	}
+	
 }

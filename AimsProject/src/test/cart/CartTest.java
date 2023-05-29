@@ -13,20 +13,18 @@ public class CartTest {
 
         DigitalVideoDisc dvd4 = new DigitalVideoDisc("Tokyo goul", "Animation", 18.99f);
 
-        anOrder.addDigitalVideoDisc(dvd1);
-        anOrder.addDigitalVideoDisc(dvd4,dvd2,dvd3);
+        anOrder.addMedia(dvd1);
+        anOrder.addMedia(dvd2);
+        anOrder.addMedia(dvd3);
+        anOrder.addMedia(dvd4);
         
         System.out.println("BEFORE REMOVE");
         anOrder.displayCart();
 
-        anOrder.removeDigitalVideoDisc(dvd4);
+        anOrder.removeMedia(dvd4);
 
         System.out.println("AFTER REMOVE");
         anOrder.displayCart();
-
-        anOrder.searchById(1);
-
-        anOrder.searchByTitle("Aladin");
 
     }
 }

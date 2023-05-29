@@ -8,13 +8,9 @@ public class StoreTest {
         Store st = new Store();
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars", "Science Fiction", "George Lucas", 87, 24.95f);
-        
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
-        st.addDVD(dvd1);
-        st.addDVD(dvd2);
-        st.addDVD(dvd3);
-        st.removeDVD(dvd3);
-
+        st.addMedia(dvd2);
+        st.addMedia(dvd1);
+        st.removeMedia(dvd2);
     }
     
 }
