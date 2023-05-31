@@ -23,41 +23,14 @@ public class DigitalVideoDisc extends Disc implements Playable {
 		return length == dvd.length;
 	}
 
-	public DigitalVideoDisc(String title) {
-		this.title = title;
-		this.director = "Unknown";
-		this.category = "Unknown";
-		this.id = nbDigitalVideoDiscs;
-		nbDigitalVideoDiscs++;
-	}
-
 	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-		this.title = title;
-		this.category = category;
-		this.director = director;
-		this.length = length;
-		this.cost = cost;
+		super(title, category, director, length, cost);
 		this.id = nbDigitalVideoDiscs;
 		nbDigitalVideoDiscs++;
 	}
 
-	public DigitalVideoDisc(String title, String category, float cost) {
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
-		this.director = "Unknown";
-		this.id = nbDigitalVideoDiscs;
-		nbDigitalVideoDiscs++;
-	}
 
-	public DigitalVideoDisc(String title, String category, String director, float cost) {
-		this.title = title;
-		this.category = category;
-		this.director = director;
-		this.cost = cost;
-		this.id = nbDigitalVideoDiscs;
-		nbDigitalVideoDiscs++;
-	}
+
 
 	public int getId() {
 		return id;

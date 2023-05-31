@@ -14,8 +14,8 @@ public class testBook {
         // System.out.println(tracks);
         // tracks.remove(0);
         // System.out.println(tracks);
-        Disc disc =new Disc(0, "abc", "abc", "abc", 0, 0);
-        Disc disc1 =new Disc(0, "abc", "abc", "abc", 0, 0);
-        System.out.println(disc.equals(disc1));
+        // Disc disc =new Disc(0, "abc", "abc", "abc", 0, 0);
+        // Disc disc1 =new Disc(0, "abc", "abc", "abc", 0, 0);
+        // System.out.println(disc.equals(disc1));
     }
 }
