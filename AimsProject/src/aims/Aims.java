@@ -10,7 +10,7 @@ import helper.*;
 public class Aims {
     public static Store store = new Store();
     public static Cart anCart = new Cart();
-    private static Scanner scanner = new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
 
     public static void showMenu() {
         System.out.println("\nAIMS: ");
@@ -170,7 +170,7 @@ public class Aims {
         switch (option) {
             case 1:
                 anCart.addMedia(media);
-                playMediaMenu();
+                storeMenu();
                 break;
             case 2:
                 playMediaMenu();
@@ -200,7 +200,7 @@ public class Aims {
                 break;
             case 2:
                 Helper.play(media);
-                seeMediaDetailMenu();
+                showMenu();
             case 0:
                 storeMenu();
             default:

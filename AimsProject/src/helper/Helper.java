@@ -7,7 +7,7 @@ import aims.*;
 import cart.Cart;
 
 public class Helper {
-    public static Scanner scanner = new Scanner(System.in);
+    public static Scanner scanner = Aims.scanner;
     private static Store store = Aims.store;
     private static Cart anCart = Aims.anCart;
 

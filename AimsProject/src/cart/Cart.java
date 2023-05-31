@@ -82,8 +82,7 @@ public class Cart {
 	public void addMediaToCart() {
 		System.out.println("ADD MEDIA TO CART");
 		System.out.println("-----------------------------------");
-		String title = Helper.scanTitle();
-		Media media = findMediaByTitle(title);
+		Media media = Helper.scanTitleFindMedia();
 		addMedia(media);
 	}
 
