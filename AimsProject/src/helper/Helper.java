@@ -1,10 +1,15 @@
-package aims;
+package helper;
 
 import java.util.Scanner;
 import media.*;
+import store.Store;
+import aims.*;
+import cart.Cart;
 
-public class helper {
+public class Helper {
     public static Scanner scanner = new Scanner(System.in);
+    private static Store store = Aims.store;
+    private static Cart anCart = Aims.anCart;
 
     public static String scanTitle() {
         String title;
@@ -43,7 +48,7 @@ public class helper {
             }
             length = scanner.nextInt();
             scanner.nextLine(); // consume leftover newline character
-        } while (length <= 0);
+        } while (length < 0);
         return length;
     }
 
@@ -57,7 +62,7 @@ public class helper {
             }
             cost = scanner.nextFloat();
             scanner.nextLine(); // consume leftover newline character
-        } while (cost <= 0);
+        } while (cost < 0);
         return cost;
     }
 
@@ -70,27 +75,65 @@ public class helper {
         return artist;
     }
 
-    public static void Play(Media media){
+    public static int scanOption() {
+        int option;
+        do {
+            System.out.println("Option:");
+            while (!scanner.hasNextInt()) { // continue looping if input is not an integer
+                System.out.println("Invalid input. Please enter an integer.");
+                scanner.nextLine(); // consume invalid input
+            }
+            option = scanner.nextInt();
+            scanner.nextLine(); // consume leftover newline character
+        } while (option < 0);
+        return option;
+    }
+
+    public static int scanID() {
+        int id;
+        do {
+            System.out.println("ID:");
+            while (!scanner.hasNextInt()) { // continue looping if input is not an integer
+                System.out.println("Invalid input. Please enter an integer.");
+                scanner.nextLine(); // consume invalid input
+            }
+            id = scanner.nextInt();
+            scanner.nextLine(); // consume leftover newline character
+        } while (id < 0);
+        return id;
+    }
+
+    public static void play(Media media){
         if (media instanceof Book) {
-            System.out.println("Media is book cannot play");
+            System.out.println("Media is Book cannot play");
         }
         if (media instanceof DigitalVideoDisc) {
             DigitalVideoDisc disc = (DigitalVideoDisc) media;
             if (disc.getLength() < 0) {
-                System.out.println("Cannot play Media");
+                System.out.println("Cannot play this DVD");
             } else {
-                System.out.println("Play");
-                System.out.println("-------------------------------------------------");
-                System.out.println(disc.getTitle() + " Length: " + disc.getLength());
+                disc.play();
             }
         }
         if (media instanceof CompactDisc) {
             CompactDisc cd = (CompactDisc) media;
             if (cd.getLength() < 0) {
-                System.out.println("Cannot play Media");
+                System.out.println("Cannot play this CD");
             } else {
-                System.out.println(cd.getTitle() + " Length: " + cd.getLength());
+                cd.play();
             }
         }
+    }
+
+    public static Media scanTitleFindMedia(){
+        String title ;
+        Media media;
+        do{
+            title= scanTitle();
+            media =store.findMediaByTitle(title);
+
+        }while(media == null);
+
+        return media;
     }
 }

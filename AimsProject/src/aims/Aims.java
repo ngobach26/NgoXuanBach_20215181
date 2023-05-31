@@ -5,10 +5,11 @@ import java.util.Scanner;
 import cart.Cart;
 import media.*;
 import store.*;
+import helper.*;
 
 public class Aims {
     public static Store store = new Store();
-    public static Cart cart = new Cart();
+    public static Cart anCart = new Cart();
     private static Scanner scanner = new Scanner(System.in);
 
     public static void showMenu() {
@@ -21,29 +22,28 @@ public class Aims {
         System.out.println("-------------------------------------------------------------------");
         System.out.println("Please choose number: 0-1-2-3");
 
-        int option = scanner.nextInt();
+        int option = Helper.scanOption();
         switch (option) {
             case 1:
-                storeMenu.displayStore();
-                storeMenu.storeMenu();
+                store.displayStore();
+                storeMenu();
                 break;
             case 2:
-                updateStore();
+                updateStoreMenu();
                 break;
             case 3:
-                showCart();
-                CartMenu.cartMenu();
+                anCart.displayCart();
+                cartMenu();
                 break;
             case 0:
                 System.exit(0);
-
             default:
                 showMenu();
-                break;
         }
     }
-    public static void updateStore() {
-        System.out.println("\nOptions:");
+
+    public static void updateStoreMenu() {
+        System.out.println("\nUPDATE STORE MENU:");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("1.Add a Media");
         System.out.println("2.Remove a Media");
@@ -51,52 +51,229 @@ public class Aims {
         System.out.println("---------------------------------------------------------------------");
         System.out.println("Please choose number: 0-1-2");
 
-        int option = scanner.nextInt();
+        int option = Helper.scanOption();
         switch (option) {
             case 1:
-                addMedia();
+                addMediaMenu();
                 break;
             case 2:
-                removeMedia();
+                removeMediaMenu();
                 break;
             case 0:
                 showMenu();
                 break;
             default:
-                updateStore();
-                break;
+                updateStoreMenu();
         }
 
     }
 
-    public static void addMedia() {
-        System.out.println("\nOptions:");
+    public static void addMediaMenu() {
+        System.out.println("\nADD MEDIA MENU");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("1.Add DVD");
         System.out.println("2.Add Book");
         System.out.println("3.Add CD");
         System.out.println("0.Back");
+        System.out.println("---------------------------------------------------------------------");
+        int option = Helper.scanOption();
+        switch (option) {
+            case 1:
+                store.addDVD();
+                addMediaMenu();
+                break;
+            case 2:
+                store.addBook();
+                addMediaMenu();
+                break;
+            case 3:
+                store.addCD();
+                addMediaMenu();
+                break;
+            case 0:
+                updateStoreMenu();
+                break;
+            default:
+                addMediaMenu();
+        }
+    }
+
+    public static void removeMediaMenu() {
+        System.out.println("\nOptions:");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("1.Remove By ID");
+        System.out.println("2.Remove By Title");
+        System.out.println("0.Back");
+        int option = Helper.scanOption();
+        switch (option) {
+            case 1:
+                store.removeByID();
+                removeMediaMenu();
+                break;
+            case 2:
+                store.removeByTitle();
+                removeMediaMenu();
+                break;
+            case 0:
+                updateStoreMenu();
+                break;
+            default:
+                removeMediaMenu();
+        }
+    }
+
+    public static void storeMenu() {
+        System.out.println("\nSTORE MENU: ");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("1.See a Media's details");
+        System.out.println("2.Add a Media to Cart");
+        System.out.println("3.Play a Media");
+        System.out.println("4.See current cart");
+        System.out.println("0.Back");
+        System.out.println("---------------------------------------------------------------------");
+        System.out.println("Please choose number: 0-1-2-3-4");
+
+        int option = Helper.scanOption();
+        switch (option) {
+            case 1:
+                seeMediaDetailMenu();
+                break;
+            case 2:
+                anCart.addMediaToCart();
+                storeMenu();
+                break;
+            case 3:
+                playMediaMenu();
+                break;
+            case 4:
+                anCart.displayCart();
+                cartMenu();
+                break;
+            case 0:
+                showMenu();
+                break;
+            default:
+                storeMenu();
+        }
+    }
+
+    public static void playMediaMenu() {
+        System.out.println("\nPLAY MEDIA MENU");
+        Media media = Helper.scanTitleFindMedia();
+        Helper.play(media);
+        System.out.println("\nOptions: ");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("1.Add to cart");
+        System.out.println("2.Play another");
+        System.out.println("0.Back");
+        int option = Helper.scanOption();
+        switch (option) {
+            case 1:
+                anCart.addMedia(media);
+                playMediaMenu();
+                break;
+            case 2:
+                playMediaMenu();
+                break;
+            case 0:
+                storeMenu();
+            default:
+                playMediaMenu();
+        }
+
+    }
+
+    public static void seeMediaDetailMenu() {
+        System.out.println("\nSEE MEDIA DETAIL MENU");
+        Media media = Helper.scanTitleFindMedia();
+        System.out.println(media.toString());
+        System.out.println("\nOptions: ");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("1.Add to cart");
+        System.out.println("2.Play");
+        System.out.println("0.Back");
+        int option = Helper.scanOption();
+        switch (option) {
+            case 1:
+                anCart.addMedia(media);
+                storeMenu();
+                break;
+            case 2:
+                Helper.play(media);
+                seeMediaDetailMenu();
+            case 0:
+                storeMenu();
+            default:
+                seeMediaDetailMenu();
+        }
+    }
+
+    public static void cartMenu() {
+        System.out.println("Options:");
+        System.out.println("--------------------------------");
+        System.out.println("1. Filter medias in cart");
+        System.out.println("2. Sort medias in cart");
+        System.out.println("3. Remove media from cart");
+        System.out.println("4. Play a media");
+        System.out.println("5. Place order");
+        System.out.println("0. Back");
+        System.out.println("--------------------------------");
+        System.out.println("Please choose a number: 0-1-2-3-4-5");
         int option = scanner.nextInt();
         switch (option) {
             case 1:
-                addDVD();
+                filterMediaInCartMenu();
                 break;
             case 2:
-                addBook();
+                sortMediasInCartMenu();
                 break;
             case 3:
-                addCD();
+                removeMediaFromCartMenu();
+                break;
+            case 4:
+                playMediaMenuCart();
+                break;
+            case 5:
+                anCart.placeOrder();
+                cartMenu();
                 break;
             case 0:
-                updateStore();
+                showMenu();
                 break;
             default:
-                addMedia();
+                cartMenu();
                 break;
         }
     }
-    public static void removeMedia() {
-        System.out.println("\nOptions:");
+
+    public static void playMediaMenuCart() {
+        System.out.println("\nPLAY MEDIA MENU CART");
+        Media media = Helper.scanTitleFindMedia();
+        Helper.play(media);
+        System.out.println("\nOptions: ");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("1.Add to cart");
+        System.out.println("2.Play another");
+        System.out.println("0.Back");
+        int option = Helper.scanOption();
+        switch (option) {
+            case 1:
+                anCart.addMedia(media);
+                playMediaMenu();
+                break;
+            case 2:
+                playMediaMenu();
+                break;
+            case 0:
+                cartMenu();
+            default:
+                playMediaMenu();
+        }
+
+    }
+
+    public static void removeMediaFromCartMenu() {
+        System.out.println("\n REMOVE MEDIA FROM CART MENU:");
         System.out.println("---------------------------------------------------------------------");
         System.out.println("1.Remove By ID");
         System.out.println("2.Remove By Title");
@@ -104,75 +281,75 @@ public class Aims {
         int option = scanner.nextInt();
         switch (option) {
             case 1:
-                removeByID();
+                anCart.removeCartByID();
+                removeMediaFromCartMenu();
                 break;
             case 2:
-                removeByTitle();
+                anCart.removeCartByTitle();
+                removeMediaFromCartMenu();
                 break;
             case 0:
-                updateStore();
+                cartMenu();
                 break;
             default:
-                removeMedia();
+                removeMediaFromCartMenu();
                 break;
-        }    
+        }
     }
 
-    public static void removeByID() {
-        storeMenu.displayStore();
-        System.out.println("Enter Id of Media you want to remove:");
-        int id = scanner.nextInt();
-        store.removeMedia(store.findMediaById(id));
-        removeMedia();
-    }
-    public static void removeByTitle() {
-        storeMenu.displayStore();
-        System.out.println("Enter Title of Media you want to remove:");
-        String Title = helper.scanTitle();
-        store.removeMedia(store.findMediaByTitle(Title));
-        removeMedia();
-    }
+    public static void filterMediaInCartMenu() {
+        System.out.println("\nFILTER MEDIA IN CART MENU");
+        System.out.println("---------------------------------------");
+        System.out.println("1. Filter by title");
+        System.out.println("2. Filter by ID");
+        System.out.println("0. Back");
+        int option = Helper.scanOption();
+        switch (option) {
+            case 1:
+                anCart.displayFilterMediaByTitle();
+                filterMediaInCartMenu();
+                break;
+            case 2:
+                anCart.displayFilterMediaById();
+                filterMediaInCartMenu();
+                break;
+            case 0:
+                cartMenu();
+                break;
+            default:
+                filterMediaInCartMenu();
 
-    public static void addDVD() {
-        String title =helper.scanTitle();
-        String category = helper.scanCategory();
-        String director = helper.scanDirector();
-        int length = helper.scanLength(); 
-        float cost = helper.scanCost();
-        DigitalVideoDisc disc = new DigitalVideoDisc(title, category, director, length, cost);
-        store.addMedia(disc);
-        addMedia();
-    }
-
-    public static void addBook() {
-        String title = helper.scanTitle(),category = helper.scanCategory();
-        float cost = helper.scanCost();
-        Book book = new Book(title, category, cost);
-        store.addMedia(book);
-        addMedia();
-    }
-    public static void addCD(){
-        String title = helper.scanTitle(),category = helper.scanCategory(),director = helper.scanDirector(),artist = helper.scanArtist();
-        int length = helper.scanLength();
-        float cost = helper.scanCost();
-        CompactDisc cd = new CompactDisc(title, category, director, length, cost, artist);
-        store.addMedia(cd);
-        addMedia();
-
-    }   
-    
-
-    public static void addMediaToCart(Media media) {
-        cart.addMedia(media);
+        }
     }
 
-    public static void showCart() {
-        System.out.println(cart.toString());
+    public static void sortMediasInCartMenu() {
+        System.out.println("\nSORT MEDIA IN CART MENU:");
+        System.out.println("-----------------------");
+        System.out.println("1.Sort by Title");
+        System.out.println("2.Sort by Cost");
+        System.out.println("0.back");
+        System.out.println("Please enter option: 0-1-2");
+        int option = Helper.scanOption();
+        switch (option) {
+            case 1:
+                anCart.sortCartByCostTitle();
+                sortMediasInCartMenu();
+                break;
+            case 2:
+                anCart.sortCartByTitleCost();
+                sortMediasInCartMenu();
+                break;
+            case 0:
+                cartMenu();
+                break;
+            default:
+                sortMediasInCartMenu();
+                break;
+        }
     }
 
     public static void main(String[] args) {
         showMenu();
         scanner.close();
-
     }
 }

@@ -2,6 +2,7 @@ package cart;
 
 import java.util.ArrayList;
 
+import helper.Helper;
 import media.Media;
 
 public class Cart {
@@ -22,6 +23,9 @@ public class Cart {
 		return sb.toString();
 	}
 
+	public void displayCart() {
+		System.out.println(this.toString());
+	}
 
 	public void addMedia(Media media) {
 		if (itemsOrdered.size() == 20) {
@@ -48,11 +52,12 @@ public class Cart {
 		}
 		return sum;
 	}
-	public void sortCartByTitleCost(){
+
+	public void sortCartByTitleCost() {
 		this.itemsOrdered.sort(Media.COMPARE_BY_TITLE_COST);
 	}
 
-	public void sortCartByCostTitle(){
+	public void sortCartByCostTitle() {
 		this.itemsOrdered.sort(Media.COMPARE_BY_COST_TITLE);
 	}
 
@@ -64,7 +69,7 @@ public class Cart {
 		}
 		return null;
 	}
-	
+
 	public Media findMediaById(int id) {
 		for (Media media : itemsOrdered) {
 			if (media.getId() == id) {
@@ -72,6 +77,68 @@ public class Cart {
 			}
 		}
 		return null;
+	}
+
+	public void addMediaToCart() {
+		System.out.println("ADD MEDIA TO CART");
+		System.out.println("-----------------------------------");
+		String title = Helper.scanTitle();
+		Media media = findMediaByTitle(title);
+		addMedia(media);
+	}
+
+	public ArrayList<Media> filterMediaByTitle(String title) {
+		ArrayList<Media> filteredMedia = new ArrayList<Media>();
+		for (Media media : itemsOrdered) {
+			if (media.getTitle().equalsIgnoreCase(title)) {
+				filteredMedia.add(media);
+			}
+		}
+		return filteredMedia;
+	}
+
+	public void displayFilterMediaByTitle() {
+		System.out.println("FILTER MEDIA BY TITLE");
+		System.out.println("-----------------------------------");
+		String title = Helper.scanTitle();
+		System.out.println(filterMediaByTitle(title).toString());
+	}
+
+	public ArrayList<Media> filterMediaById(int id) {
+		ArrayList<Media> filteredMedia = new ArrayList<Media>();
+		for (Media media : itemsOrdered) {
+			if (media.getId() == id) {
+				filteredMedia.add(media);
+			}
+		}
+		return filteredMedia;
+	}
+
+	public void displayFilterMediaById() {
+		System.out.println("FILTER MEDIA BY ID");
+		System.out.println("-----------------------------------");
+		int id = Helper.scanID();
+		System.out.println(filterMediaById(id).toString());
+	}
+
+	public void removeCartByID(){
+        System.out.println("\nREMOVE CART BY ID");
+		displayCart();
+        int id = Helper.scanID();
+        removeMedia(findMediaById(id));
+	}
+	public void removeCartByTitle() {
+        System.out.println("\nREMOVE CART BY TITLE");
+        displayCart();
+        String title = Helper.scanTitle();
+        removeMedia(findMediaByTitle(title));
+    }
+
+	public void placeOrder() {
+		System.out.println("\nPLACE ORDER");
+		System.out.println("-----------------------------------");
+		itemsOrdered.clear();
+		System.out.println("Thank you for your purchase!");
 	}
 	
 
