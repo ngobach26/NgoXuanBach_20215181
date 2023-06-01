@@ -11,6 +11,7 @@ public class Media {
     protected String title;
     protected String category;
     protected float cost;
+    public static int nbOfMedia = 0;
     public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
     public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
 
@@ -42,9 +43,11 @@ public class Media {
     
 
     public Media( String title, String category, float cost) {
+        this.id = nbOfMedia;
         this.title = title;
         this.category = category;
         this.cost = cost;
+        nbOfMedia++;
     }
 
 
@@ -52,9 +55,6 @@ public class Media {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;

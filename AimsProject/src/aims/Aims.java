@@ -200,7 +200,7 @@ public class Aims {
                 break;
             case 2:
                 Helper.play(media);
-                showMenu();
+                storeMenu();
             case 0:
                 storeMenu();
             default:

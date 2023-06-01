@@ -5,12 +5,9 @@ import java.util.List;
 
 public class Book extends Media {
     private List<String> authors = new ArrayList<String>();
-    public static int nbBooks = 0;
 
     public Book(String title, String category, float cost) {
         super(title, category, cost);
-        this.id = nbBooks;
-        nbBooks++;
     }
 
     public void addAuthors(String author){

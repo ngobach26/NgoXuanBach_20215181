@@ -1,7 +1,6 @@
 package media;
 
 public class DigitalVideoDisc extends Disc implements Playable {
-	public static int nbDigitalVideoDiscs = 0;
 
 	@Override
 	public boolean equals(Object obj) {
@@ -25,8 +24,6 @@ public class DigitalVideoDisc extends Disc implements Playable {
 
 	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
 		super(title, category, director, length, cost);
-		this.id = nbDigitalVideoDiscs;
-		nbDigitalVideoDiscs++;
 	}
 
 	public int getId() {

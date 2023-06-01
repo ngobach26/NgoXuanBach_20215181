@@ -1,2 +1,55 @@
-Which classes are aggregates of other classes? Checking all constructors of whole classes if they 
+1. Which classes are aggregates of other classes? Checking all constructors of whole classes if they 
 initialize for their parts?
+ - CompactDisc aggregates Track
+ - Store aggregates Media
+ - Cart aggregates Media
+
+ 2. Alternatively, to compare items in the cart, instead of using Comparator, we can use the 
+Comparable interface and override the compareTo()method. You can refer to the Java docs to see the 
+information of this interface. 
+Suppose we are taking this Comparable interface approach.
+- What class should implement the Comparable interface?
+- In those classes, how should you implement the compareTo()method be to reflect the ordering that we 
+want?
+- Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this 
+Comparable interface approach?
+- Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing 
+length, then cost. How would you modify your code to allow this?
+
+    Answer:
+    - The class whose objects we want to compare should implement the Comparable interface.
+
+    - In the implementing class, we should implement the compareTo() method such that it returns a negative integer if the
+    current instance is less than the other, 0 if they are equal, and a positive integer if the current instance is 
+    greater than the other. To reflect the ordering that we want, we can compare the relevant fields of the two instances
+    within the compareTo() method and return the appropriate value based on their relative order.
+
+    - No, we cannot have two ordering rules of an item using the Comparable interface approach. The compareTo() method only
+    defines one way of comparing objects, so we must choose the most important field or criteria for our sorting/ordering
+    rule. If we want to have multiple ordering rules, we can implement separate Comparator instances for each rule and
+    use them when sorting a collection of items. Alternatively, we could also create separate classes that implement 
+    Comparable with their own sorting logic and use them as appropriate.
+
+    - 
+    public class DVDComparator implements Comparator<DVD> {
+    @Override
+    public int compare(DVD dvd1, DVD dvd2) {
+        // First sort by title
+        int result = dvd1.getTitle().compareTo(dvd2.getTitle());
+        
+        if (result == 0) { // If titles are equal, sort by decreasing length
+            result = Integer.compare(dvd2.getLength(), dvd1.getLength());
+            
+            if (result == 0) { // If lengths are also equal, sort by cost
+                result = Double.compare(dvd1.getCost(), dvd2.getCost());
+            }
+        }
+        
+        return result;
+    }
+}
+
+
+
+    
+
