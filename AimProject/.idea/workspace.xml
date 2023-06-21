@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6c397aef-2055-4e2d-9ba2-044d7e6a7d04" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../GUIProject/src/hust/soict/globalict/javafx/Painter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GUIProject/src/hust/soict/globalict/javafx/PainterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GUIProject/src/hust/soict/globalict/swing/AWTAccumulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GUIProject/src/hust/soict/globalict/swing/NumberGrid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../GUIProject/src/hust/soict/globalict/swing/SwingAccumulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/Answer.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/AnswerOfLab03.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/AnswerOfLab04.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/Design/Class Diagram.asta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/Design/Class Diagram0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/Reading Assignment/ReadingAssignment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/Requirement/UseCase Diagram.asta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/Requirement/UseCase Diagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/bin/AimsProject/aims/Aims.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/bin/AimsProject/cart/Cart.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/bin/AimsProject/disc/DigitalVideoDisc$nbDigitalVideoDiscs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/bin/AimsProject/disc/DigitalVideoDisc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/bin/AimsProject/store/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/bin/AimsProject/test/TestPassingParameter/TestPassingParameter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/bin/AimsProject/test/cart/CartTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/bin/AimsProject/test/store/StoreTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/aims/Aims.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/cart/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/cart/MediaComparatorByCostTitle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/cart/MediaComparatorByTitleCost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/helper/Helper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/media/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/media/CompactDisc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/media/DigitalVideoDisc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/media/Disc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/media/Media.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/media/Playable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/media/Track.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/media/testBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/store/Store.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/test/TestPassingParameter/TestPassingParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/test/cart/CartTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AimsProject/src/test/store/StoreTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/examples_lab1/Calculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/examples_lab1/FirstDialog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/examples_lab1/HelloNameDialog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/examples_lab1/LinearEquation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/examples_lab1/LinearSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/examples_lab1/SecondDegreeEquation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/examples_lab1/ShowTwoNumbers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/exercise_lab1/Array.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/exercise_lab1/ChoosingOption.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/exercise_lab1/DayOfMonth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/exercise_lab1/InputFromKeyboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/exercise_lab1/MatrixAddition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/exercise_lab1/Triangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/garbage/ConcatenationInLoops.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/garbage/GarbageCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/bin/garbage/NoGarbage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/examples_lab1/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/examples_lab1/FirstDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/examples_lab1/HelloNameDialog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/examples_lab1/LinearEquation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/examples_lab1/LinearSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/examples_lab1/SecondDegreeEquation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/examples_lab1/ShowTwoNumbers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/exercise_lab1/Array.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/exercise_lab1/ChoosingOption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/exercise_lab1/DayOfMonth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/exercise_lab1/InputFromKeyboard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/exercise_lab1/MatrixAddition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/exercise_lab1/Triangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/garbage/ConcatenationInLoops.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/garbage/GarbageCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OthersProject/src/garbage/NoGarbage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../slide/Danny Poo, Derek Kiong, Swarnalatha Ashok - Object-Oriented Programming and Java-Springer (2007).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../slide/OOP-Lab01-EnvironmentSetup_JavaBasics.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2RWChFp595eLjSLdHgW8Z7MYQ5H" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/2022_2/NgoXuanBach_20215181/AimProject/src/main/java/hust/soict/globalict",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\2022_2\NgoXuanBach_20215181\AimProject\src\main\java\hust\soict\globalict" />
+      <recent name="D:\2022_2\NgoXuanBach_20215181\AimProject\src\main\resources\hust\soict\globalict" />
+      <recent name="D:\2022_2\NgoXuanBach_20215181\AimProject\src\main\java\hust\soict\globalict\screen" />
+      <recent name="D:\2022_2\NgoXuanBach_20215181\AimProject\src\main\java\hust\soict\globalict\aim" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="AimProjct" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="AimProjct" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c397aef-2055-4e2d-9ba2-044d7e6a7d04" name="Changes" comment="" />
+      <created>1687356569948</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687356569948</updated>
+      <workItem from="1687356570501" duration="1316000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
